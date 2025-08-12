@@ -53,7 +53,7 @@ app.delete('/usuarios/:id', async (req, res) => {
 })
 
 app.listen(3000)
-
+// http://localhost:3000
 /*
     guilherme
     J2Kg71Oa52zzBauD
