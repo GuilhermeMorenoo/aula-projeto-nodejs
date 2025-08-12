@@ -1,17 +1,18 @@
-import express from "express"
+import express from 'express'
+import cors from 'cors'
 import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
 const app = express()
 app.use(express.json())
-
+app.use(cors())
 
 app.get('/usuarios', async (req, res) => {
 
     const users = await prisma.user.findMany()
 
-    res.status(200).json(users)
+    res.status(200).json(users) 
 }) //req - requisição | res - resposta//
 
 app.post('/usuarios', async (req, res) => {
